@@ -1,0 +1,23 @@
+version: '1'
+services:
+  frontend:
+    image: carclient
+    ports:
+      - "3000:3000"
+    
+    networks:
+      - my-net
+
+  backend:
+    image: carserver
+    ports:
+      - "5000:5000"
+    # environment:
+    #   - NODE_ENV=production  # Set the environment variable as needed
+    # command: npm start  # Adjust the startup command if needed
+    networks:
+      - my-net
+
+networks:
+  my-net:
+    driver: bridge
