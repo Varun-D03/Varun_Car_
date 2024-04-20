@@ -5,7 +5,7 @@ const dotenv = require('dotenv')
 const cors=require('cors')
 
 const dbConnection = require('./db')
-app.use(cors({origin: 'http://localhost:3000'}))
+app.use(cors({origin: '*'}))
 app.use(express.json())
 
 //env config
